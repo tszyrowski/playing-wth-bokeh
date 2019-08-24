@@ -16,6 +16,3 @@ def plot_out(plot_name):
     if not plot_path.exists():
         plot_path.mkdir(parents=True, exist_ok=True)
     return pathlib.Path.joinpath(plot_path, name)
-
-if __name__=="__main__":
-    print(plot_out("plot_name"))
