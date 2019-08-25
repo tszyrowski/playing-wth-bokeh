@@ -9,13 +9,9 @@ from bokeh.io import output_file
 from bokeh.models import ColumnDataSource, CategoricalColorMapper, Div
 from bokeh.layouts import gridplot, column
 
-playerBoxScore = plots_output.data_in("2017-18_playerBoxScore.csv")
 teamBoxScore = plots_output.data_in("2017-18_teamBoxScore.csv")
-standings = plots_output.data_in("2017-18_standings.csv")
 
-player_stats = pd.read_csv(playerBoxScore, parse_dates=['gmDate'])
 team_stats = pd.read_csv(teamBoxScore, parse_dates=['gmDate'])
-standings = pd.read_csv(standings, parse_dates=['stDate'])
 
 phi_gm_stats = (team_stats[(team_stats["teamAbbr"] == "PHI") &
                            (team_stats["seasTyp"] == "Regular")]
