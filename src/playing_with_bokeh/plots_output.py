@@ -16,3 +16,15 @@ def plot_out(plot_name):
     if not plot_path.exists():
         plot_path.mkdir(parents=True, exist_ok=True)
     return pathlib.Path.joinpath(plot_path, name)
+
+def data_in(data_name):
+    """Os indenpendent path to a folder where plots are stored
+    
+    params:
+        plot_name - name of the output plot taken to {name}.html 
+    """
+    name = "{}".format(data_name)
+    data_path = pathlib.Path(__file__).resolve().parent.parent.parent
+    data_path = pathlib.Path.joinpath(data_path, "data", name)
+    assert data_path.exists()
+    return data_path
